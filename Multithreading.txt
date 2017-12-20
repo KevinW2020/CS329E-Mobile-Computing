@@ -1,0 +1,21 @@
+multithreading and closures:
+
+Super important (multithreading), almost all modern software uses it.
+-multiple cores in the processor, can now do multiple simultaneously, rather than one at a time
+-can be difficult to program in this functionality, almost impossible to recreate conditions in which things can go wrong.
+-everything runs in a process: an accounting of what every program that's running at that time needs (list of resources)
+-every app has one process, and inside each process is threads (which is where actual code is executed in)
+-if you do nothing else, there is one thread (main thread) that controlls the user interface
+-so multithreading is having more than one thread in a process.
+-although we can think of memory allocated to a process as being continouous, it isn't (but OS keeps track of all it)
+-multithreading is ability to execute different parts of a program, called threads, simultaneously, makes much better use of avaiable resources
+-However, programmer must carefully design the program in such a way that all the threads can run at the same time without interfering with each other (synchronize access to data)
+-GCD (Grand Central Dispatch) and operation queues [these are aviabile in iOS to do multithreading]
+-GCD: apple's library for concurrent code execution on multi-core hardware
+
+Basic Rules
+-anything that is UI related should be "dispatched" to the main queue
+-not UI or network related dispatched to 'user queue'
+-network queue is 'background'
+
+-DispatchQueue.<queue>.sync

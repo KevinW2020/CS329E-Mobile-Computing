@@ -1,0 +1,12 @@
+App Transport Security
+- a new level of security b/w your app and web services
+- needed if your app creates a connection using URLConnection or URLSession
+- Rejects any insecure connection
+
+- change the info.plist file, created every time you create a project
+- can be dictionary
+- can allow any/all http (Insecure) connections, never want to produce an app like that
+
+- Firebase takes care of some stuff, they assume that your data isn't sensitive
+
+ Netowrking is fundamental to high-tech world
